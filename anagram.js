@@ -1,15 +1,15 @@
-function sort(input: string): string {
+function sort(input) {
   return input.toString().toLowerCase().split("").sort().join("");
 }
 
 export class Anagram {
-  private value: string;
-  constructor(input: string) {
+  value = "";
+  constructor(input) {
     this.value = input;
   }
 
-  public matches(...input: string[]): string[] {
-    const result: string[] = [];
+  matches(...input) {
+    const result = [];
     for (const each of input) {
       if (sort(each) === sort(this.value)) {
         if (each.toLowerCase() === this.value.toLowerCase()) {
